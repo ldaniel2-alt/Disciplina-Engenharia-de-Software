@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sge-postgres
+    environment:
+      POSTGRES_DB: expedientes_mogovolas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d expedientes_mogovolas"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  backend:
+    build: ./backend
+    container_name: sge-backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/expedientes_mogovolas
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      FILE_STORAGE_PATH: /app/storage
+    ports: ["8080:8080"]
+    volumes: ["./storage:/app/storage"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+volumes:
+  postgres_data:
