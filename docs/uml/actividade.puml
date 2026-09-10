@@ -1,0 +1,21 @@
+@startuml
+start
+:Autenticar utilizador;
+:Validar papel/permissão;
+:Registar expediente;
+:Classificar prioridade/confidencialidade;
+:Encaminhar para sector;
+if (Sector recebeu?) then (sim)
+:Registar recepção;
+:Analisar e despachar;
+if (Concluído?) then (sim)
+:Arquivar;
+else (não)
+:Tramitar novamente;
+endif
+else (não)
+:Aguardar recepção;
+endif
+:Registar auditoria;
+stop
+@enduml
