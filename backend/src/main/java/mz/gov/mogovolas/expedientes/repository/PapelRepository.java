@@ -1,0 +1,1 @@
+package mz.gov.mogovolas.expedientes.repository; import mz.gov.mogovolas.expedientes.entity.Papel; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface PapelRepository extends JpaRepository<Papel,Long>{Optional<Papel> findByNome(String nome);}
