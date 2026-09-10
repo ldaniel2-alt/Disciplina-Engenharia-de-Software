@@ -34,20 +34,20 @@ Sistema web para automatizar o ciclo de vida dos expedientes administrativos: en
 ```bash
 git clone https://github.com/ldaniel2-alt/Disciplina-Engenharia-de-Software.git
 cd Disciplina-Engenharia-de-Software
-docker compose up --build
+ADMIN_PASSWORD='defina-uma-palavra-passe-forte' docker compose up --build
 ```
 Abrir `http://localhost:8080`.
 
 ## Execução local
-Criar a base `expedientes_mogovolas`, configurar `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` e executar:
+Criar a base `expedientes_mogovolas`, configurar `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` e, opcionalmente, `ADMIN_PASSWORD`; depois:
 ```bash
 cd backend
 mvn clean test
 mvn spring-boot:run
 ```
 
-## Demonstração
-`admin` / `Admin@123` — altere a palavra-passe antes de utilização real.
+## Conta inicial
+O utilizador `admin` é criado automaticamente na primeira execução. A palavra-passe vem de `ADMIN_PASSWORD`; se a variável não for definida, a aplicação usa um valor temporário que **deve ser alterado imediatamente**.
 
 ## API principal
 - `GET /api/dashboard`
@@ -78,6 +78,7 @@ backend/       aplicação Spring Boot
 database/      documentação do modelo relacional
 docs/uml/      PlantUML
 docker-compose.yml
+.github/       CI com Maven test
 ```
 
 ## Nota
