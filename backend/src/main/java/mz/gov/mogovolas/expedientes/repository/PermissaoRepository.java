@@ -1,0 +1,1 @@
+package mz.gov.mogovolas.expedientes.repository; import mz.gov.mogovolas.expedientes.entity.Permissao; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface PermissaoRepository extends JpaRepository<Permissao,Long>{Optional<Permissao> findByCodigo(String codigo);}
