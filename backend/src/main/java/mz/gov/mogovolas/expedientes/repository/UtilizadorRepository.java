@@ -1,0 +1,1 @@
+package mz.gov.mogovolas.expedientes.repository; import mz.gov.mogovolas.expedientes.entity.Utilizador; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface UtilizadorRepository extends JpaRepository<Utilizador,Long>{Optional<Utilizador> findByUsername(String username); Optional<Utilizador> findByEmail(String email);}
