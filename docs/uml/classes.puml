@@ -1,0 +1,23 @@
+@startuml
+class Utilizador
+class Papel
+class Permissao
+class Sector
+class Expediente
+class Tramitacao
+class Despacho
+class Anexo
+class Auditoria
+Utilizador "*" -- "*" Papel
+Papel "*" -- "*" Permissao
+Utilizador "*" --> "1" Sector
+Utilizador "1" --> "*" Expediente : cria
+Expediente "1" o-- "*" Tramitacao
+Expediente "1" o-- "*" Despacho
+Expediente "1" o-- "*" Anexo
+Tramitacao "*" --> "1" Sector : destino
+Tramitacao "*" --> "1" Utilizador : envia/recebe
+Despacho "*" --> "1" Utilizador
+Anexo "*" --> "1" Utilizador
+Auditoria "*" --> "0..1" Utilizador
+@enduml
