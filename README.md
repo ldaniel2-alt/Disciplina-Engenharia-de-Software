@@ -80,6 +80,3 @@ docs/uml/      PlantUML
 docker-compose.yml
 .github/       CI com Maven test
 ```
-
-## Nota
-Versão preparada para demonstração e avaliação académica. Para produção institucional recomenda-se Flyway/Liquibase, object storage, antivírus, gestão de segredos, HTTPS, MFA, rate limiting, backups e revisão formal dos perfis.
