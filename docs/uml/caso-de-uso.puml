@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Administrador
+actor Secretaria
+actor "Chefe de Sector" as Chefe
+actor "Secretário Permanente" as SP
+actor Arquivista
+actor Auditor
+rectangle SGE { usecase "Autenticar" as A; usecase "Gerir utilizadores/RBAC" as U; usecase "Registar expediente" as R; usecase "Pesquisar/consultar" as C; usecase "Tramitar" as T; usecase "Receber" as RE; usecase "Emitir despacho" as D; usecase "Arquivar" as AR; usecase "Gerir anexos" as AN; usecase "Auditar" as AU; usecase "Gerar relatórios" as RL }
+Administrador--U
+Secretaria--R
+Secretaria--T
+Secretaria--RE
+Chefe--T
+Chefe--RE
+Chefe--D
+SP--D
+Arquivista--AR
+Auditor--AU
+Auditor--RL
+@enduml
