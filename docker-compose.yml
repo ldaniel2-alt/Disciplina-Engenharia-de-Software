@@ -21,6 +21,7 @@ services:
       DB_URL: jdbc:postgresql://postgres:5432/expedientes_mogovolas
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-me-now}
       FILE_STORAGE_PATH: /app/storage
     ports: ["8080:8080"]
     volumes: ["./storage:/app/storage"]
