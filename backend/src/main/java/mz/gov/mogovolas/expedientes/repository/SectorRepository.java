@@ -1,0 +1,1 @@
+package mz.gov.mogovolas.expedientes.repository; import mz.gov.mogovolas.expedientes.entity.Sector; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface SectorRepository extends JpaRepository<Sector,Long>{Optional<Sector> findByNome(String nome);}
