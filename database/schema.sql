@@ -1,0 +1,5 @@
+-- Modelo relacional documentado para o SGE.
+-- O desenvolvimento utiliza Hibernate ddl-auto=update.
+-- Produção: migrar este modelo para Flyway ou Liquibase.
+-- Tabelas: sectores, utilizadores, papeis, permissoes, papel_permissao,
+-- utilizador_papel, expedientes, tramitacoes, despachos, anexos e auditorias.
