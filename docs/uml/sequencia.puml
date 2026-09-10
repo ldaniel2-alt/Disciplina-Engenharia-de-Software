@@ -1,0 +1,18 @@
+@startuml
+actor Utilizador
+participant Frontend
+participant API
+participant RBAC
+participant "ExpedienteService" as S
+participant PostgreSQL as DB
+Utilizador->Frontend: submete acção
+Frontend->API: HTTP
+API->RBAC: validar permissão
+RBAC-->API: autorizado
+API->S: executar operação
+S->DB: persistir estado/histórico
+DB-->S: sucesso
+S-->API: resultado
+API-->Frontend: resposta
+Frontend-->Utilizador: confirmação
+@enduml
