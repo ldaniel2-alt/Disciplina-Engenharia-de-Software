@@ -1,0 +1,1 @@
+package mz.gov.mogovolas.expedientes.repository; import mz.gov.mogovolas.expedientes.entity.Despacho; import org.springframework.data.jpa.repository.JpaRepository; public interface DespachoRepository extends JpaRepository<Despacho,Long>{}
